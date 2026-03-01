@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
                 git 'https://github.com/JiyanneKateTuazon/comp367-webapp.git'
@@ -11,7 +10,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn clean package'
+                sh 'mvn -v'
+                sh 'mvn clean package'
             }
         }
     }
