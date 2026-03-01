@@ -1,13 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/JiyanneKateTuazon/comp367-webapp.git'
-            }
-        }
+    tools {
+        maven 'M3'
+    }
 
+    stages {
         stage('Build') {
             steps {
                 sh 'mvn -v'
